@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Coming Soon — SoloNightOut</title>
+    <meta name="description" content="This page is coming soon. SoloNightOut is building the world's first city-by-city guide for going out alone — confidently, safely, and beautifully.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://solonightout.com/coming-soon">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Coming Soon — SoloNightOut">
+    <meta property="og:description" content="Something beautiful is on the way. SoloNightOut — the global guide to going out alone.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://solonightout.com/coming-soon">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127769;</text></svg>">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --color-bg: #faf8f5;
+            --color-text: #2c2825;
+            --color-text-light: #6b6560;
+            --color-text-lighter: #9a9490;
+            --color-accent: #c4956a;
+            --color-accent-hover: #b07f54;
+            --color-accent-soft: #e8d5c0;
+            --color-border: #e5ded5;
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+        }
+
+        html {
+            font-size: 16px;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background: var(--color-bg);
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            min-height: 100svh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        .coming-soon {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coming-soon-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .coming-soon-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+        }
+
+        .coming-soon-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(20, 17, 14, 0.65) 0%,
+                rgba(20, 17, 14, 0.75) 100%
+            );
+        }
+
+        .coming-soon-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 2rem 1.5rem;
+            max-width: 620px;
+        }
+
+        .cs-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            margin-bottom: 2.5rem;
+        }
+
+        .cs-logo-icon {
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .cs-logo-text {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .cs-kicker {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-accent-soft);
+            margin-bottom: 1rem;
+        }
+
+        .cs-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            color: #fff;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .cs-title em {
+            font-style: italic;
+            color: var(--color-accent-soft);
+        }
+
+        .cs-desc {
+            font-size: clamp(1rem, 2vw, 1.125rem);
+            line-height: 1.7;
+            color: rgba(245, 240, 234, 0.75);
+            margin-bottom: 2rem;
+        }
+
+        .cs-form {
+            max-width: 440px;
+            margin: 0 auto 2rem;
+        }
+
+        .cs-form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cs-input {
+            width: 100%;
+            padding: 0.85em 1.25em;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            border: 1.5px solid rgba(255,255,255,0.2);
+            border-radius: 9999px;
+            background: rgba(255,255,255,0.08);
+            color: #fff;
+            outline: none;
+            transition: border-color 150ms ease;
+            backdrop-filter: blur(4px);
+        }
+
+        .cs-input:focus {
+            border-color: var(--color-accent);
+        }
+
+        .cs-input::placeholder {
+            color: rgba(255,255,255,0.4);
+        }
+
+        .cs-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            font-family: var(--font-body);
+            font-size: 0.9375rem;
+            font-weight: 500;
+            padding: 0.8em 1.8em;
+            border: none;
+            border-radius: 9999px;
+            background: var(--color-accent);
+            color: #fff;
+            cursor: pointer;
+            transition: all 250ms ease;
+        }
+
+        .cs-btn:hover {
+            background: var(--color-accent-hover);
+            transform: translateY(-1px);
+        }
+
+        .cs-privacy {
+            font-size: 0.8125rem;
+            color: rgba(255,255,255,0.4);
+        }
+
+        .cs-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: var(--color-accent-soft);
+            text-decoration: none;
+            transition: color 150ms ease;
+            margin-top: 1rem;
+        }
+
+        .cs-back:hover {
+            color: #fff;
+        }
+
+        .cs-back svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Floating particles (subtle ambiance) */
+        .cs-particles {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .cs-particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(196, 149, 106, 0.4);
+            border-radius: 50%;
+            animation: float linear infinite;
+        }
+
+        .cs-particle:nth-child(1) { left: 10%; top: 20%; animation-duration: 15s; animation-delay: 0s; }
+        .cs-particle:nth-child(2) { left: 30%; top: 60%; animation-duration: 20s; animation-delay: -3s; width: 3px; height: 3px; }
+        .cs-particle:nth-child(3) { left: 50%; top: 10%; animation-duration: 18s; animation-delay: -7s; }
+        .cs-particle:nth-child(4) { left: 70%; top: 80%; animation-duration: 22s; animation-delay: -5s; width: 3px; height: 3px; }
+        .cs-particle:nth-child(5) { left: 90%; top: 40%; animation-duration: 16s; animation-delay: -10s; }
+        .cs-particle:nth-child(6) { left: 20%; top: 90%; animation-duration: 19s; animation-delay: -2s; }
+        .cs-particle:nth-child(7) { left: 80%; top: 15%; animation-duration: 21s; animation-delay: -8s; width: 3px; height: 3px; }
+        .cs-particle:nth-child(8) { left: 45%; top: 50%; animation-duration: 17s; animation-delay: -12s; }
+
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) translateX(30px); opacity: 0; }
+        }
+
+        /* Responsive */
+        @media (min-width: 480px) {
+            .cs-form-group {
+                flex-direction: row;
+            }
+            .cs-btn {
+                width: auto;
+                flex-shrink: 0;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .cs-particle {
+                animation: none;
+                display: none;
+            }
+        }
+
+        @supports (padding: env(safe-area-inset-bottom)) {
+            .coming-soon-content {
+                padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="coming-soon">
+        <div class="coming-soon-bg">
+            <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=1600&h=900&fit=crop&q=80" alt="Warm sunset over a calm coastal city, evening light on water" loading="eager" fetchpriority="high">
+            <div class="coming-soon-overlay"></div>
+        </div>
+
+        <div class="cs-particles" aria-hidden="true">
+            <span class="cs-particle"></span>
+            <span class="cs-particle"></span>
+            <span class="cs-particle"></span>
+            <span class="cs-particle"></span>
+            <span class="cs-particle"></span>
+            <span class="cs-particle"></span>
+            <span class="cs-particle"></span>
+            <span class="cs-particle"></span>
+        </div>
+
+        <div class="coming-soon-content">
+            <a href="/" class="cs-logo" aria-label="Back to SoloNightOut home">
+                <span class="cs-logo-icon">&#127769;</span>
+                <span class="cs-logo-text">SoloNightOut</span>
+            </a>
+
+            <p class="cs-kicker">Something beautiful is coming</p>
+            <h1 class="cs-title">This page is<br><em>on its way.</em></h1>
+            <p class="cs-desc">We're building something special — city guides, solo dining picks, evening routes, and the confidence tools you need to go out alone, beautifully. Be the first to know when it's ready.</p>
+
+            <form class="cs-form" action="#" method="get" aria-label="Get notified">
+                <div class="cs-form-group">
+                    <label for="cs-email" class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Email address</label>
+                    <input type="email" id="cs-email" class="cs-input" placeholder="Your email address" required autocomplete="email">
+                    <button type="submit" class="cs-btn">Notify Me</button>
+                </div>
+                <p class="cs-privacy">No spam. Just the good stuff.</p>
+            </form>
+
+            <a href="/" class="cs-back">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                Back to homepage
+            </a>
+        </div>
+    </main>
+</body>
+</html>
